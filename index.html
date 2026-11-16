@@ -2,18 +2,54 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>CAVE simulator</title>
-  <script type="module" crossorigin src="./assets/index-D2vhdXEq.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-De1PgRM5.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>CAVE simulator (WebXR)</title>
+  <script type="module" crossorigin src="./assets/index-eC61QPIb.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-COq4tVZQ.css">
 </head>
 <body>
 <div id="info">
-	CAVE Simulator. The head and teapot are draggable. <br />
-	"L" See from Left Eye | "R" See from Right Eye | "S" toggle show scene  <br />
+	<h3>CAVE Simulator</h3>
+	<p class="hint">Head, teapot and beam are draggable.</p>
+
+	<div class="section">
+		<h4>Eyes</h4>
+		<div class="row">
+			<span>IOD</span>
+			<input type="range" id="iodSlider" min="0.5" max="15" step="0.1" value="6.8">
+			<output id="iodValue">6.8 cm</output>
+		</div>
+	</div>
+
+	<div class="section">
+		<h4>Scene</h4>
+		<div class="row">
+			<span>Scale</span>
+			<input type="range" id="scaleSlider" min="0.2" max="3" step="0.05" value="1">
+			<output id="scaleValue">1.00×</output>
+		</div>
+		<div class="buttons">
+			<button id="toggleTeapot" class="toggle on">Teapot</button>
+			<button id="toggleBeam" class="toggle">Beam</button>
+			<button id="resetBtn">Reset</button>
+		</div>
+	</div>
+
+	<p class="hint">Mouse: left drag = look around · right/middle drag = move · wheel = forward/back</p>
+	<p class="hint">Keys: L/R eye view · S toggle scene · O switch teapot/beam · T print matrices</p>
+	<details class="hint">
+		<summary>VR controls</summary>
+		Start: you stand inside the virtual head, facing the front wall<br />
+		Left stick: walk · Right stick: turn left / right<br />
+		Trigger (hold): grab teapot / beam, + right stick: distance / rotation<br />
+		Holding with one trigger, press the other: spread / close hands to scale<br />
+		Right stick click: switch teapot / beam<br />
+		Left stick click: hide / show the help panel on your left hand<br />
+		A/X: toggle scene · B/Y: reset<br />
+		Grip: projection from your headset / from the fixed virtual head
+	</details>
 </div>
 
-<!-- Check: https://threejs.org/docs/index.html#manual/en/introduction/Installation 
-for alternative installations -->
-
-    </body>
+
+</body>
 </html>
